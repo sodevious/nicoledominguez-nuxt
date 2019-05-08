@@ -90,3 +90,26 @@ a {
     border-color: $color-pink;
   }
 }
+
+//
+// Layout & Grid
+// --------------------------
+.nd-row {
+  display: block;
+}
+
+@media screen and (min-width: $tablet) {
+  .nd-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nd-col-4 {
+    float: none;
+    flex: 0 0 31%;
+  }
+
+  .nd-col-6 {
+    width: 50%;
+  }
+}
