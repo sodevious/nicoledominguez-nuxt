@@ -3,16 +3,23 @@ import pkg from './package'
 export default {
   mode: 'spa',
 
-  /*
-  ** Headers of the page
-  */
   head: {
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
+      // { property: 'og:image', content: '' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:description', content: pkg.description },
+      { property: 'og:title', content: pkg.name },
+      // { property: 'og:url', content: '' },
+      { name: 'twitter:creator', content: '@sodevious' },
+      { name: 'twitter:card', content: 'summary' },
+      { property: 'google-site-verification', content: 'af0x8lMFq5Izj7MNfhrGXiObtaPCSo4QrON2DW8BjIM' },
     ],
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
