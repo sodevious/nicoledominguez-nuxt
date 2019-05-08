@@ -1,28 +1,51 @@
 <template>
-  <section class="container">
-    <div>
+  <header role="banner" class="nd-header nd-row">
+    <div class="nd-header-info nd-col-6">
       <logo />
-      <h1 class="title">
-        nicoledominguez
-      </h1>
-      <h2 class="subtitle">
-        My transcendent Nuxt.js project
+
+      <h2 class="nd-header-title">
+        UI/UX Developer
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
+
+      <div>
+        <a :href="link.url" v-for="link in links" class="btn">
+          <i :class="link.icon" aria-hidden="true"></i>
+          {{ link.name }}
+        </a>
       </div>
+
+      <p class="nd-header-intro">
+        Empathetic, curious, creative human.
+      </p>
+
+      <p class="nd-header-intro">
+        I am a design-focused front-end developer with an eye for detail.
+        I believe in accessible, mobile-first modern websites and web applications semantically built.
+        The focus of my work is in user interface implementation, style guides, component libraries and design systems.
+      </p>
     </div>
-  </section>
+  </header>
 </template>
+
+<style>
+  .nd-header-info {
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  .nd-header-info .nd-logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 85%;
+    max-width: 300px;
+  }
+
+  .nd-header-title {
+    margin: 2rem auto;
+    font-size: $xl-font-size;
+    font-weight: $nd-adelle-light;
+  }
+</style>
 
 <script>
 import Logo from '~/components/Logo.vue'
@@ -30,6 +53,17 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+
+  asyncData (context) {
+    return {
+      links: [
+        { name:'Resumé', url: '~/assets/public/ndominguez-resume-2019.pdf', icon: 'fa fa-file' },
+        { name:'Contact', url: 'mailto:work@nicoledominguez.com', icon: 'fa fa-envelope' },
+        { name:'Portfolio', url: '/portfolio', icon: 'fa fa-briefcase' },
+        { name:'About', url: '/about', icon: 'fa fa-user' }
+      ]
+    }
   }
-}
+ }
 </script>

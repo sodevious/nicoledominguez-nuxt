@@ -113,3 +113,31 @@ a {
     width: 50%;
   }
 }
+
+
+//
+// Global
+// --------------------------
+.btn {
+  display: inline-block;
+  padding: 8px 10px;
+  font-size: $sm-font-size;
+  font-weight: $nd-adelle-bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-purple;
+
+  &:hover {
+    background-color: $color-pink;
+    color: white;
+
+    .fa {
+      color: $color-offWhite;
+    }
+  }
+
+  &:focus {
+    background-color: white;
+    color: black;
+  }
+}
