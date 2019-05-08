@@ -17,16 +17,13 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
+  loading: { color: '#715F80' },
 
   /*
   ** Global CSS
   */
   css: [
+    '@/assets/scss/main.scss'
   ],
 
   /*
@@ -39,6 +36,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+        'nuxt-webfontloader',
   ],
 
   /*
@@ -50,5 +48,11 @@ export default {
     */
     extend(config, ctx) {
     }
-  }
+  },
+
+  webfontloader: {
+   typekit: {
+     id: 'amr1fda'
+   }
+ },
 }
