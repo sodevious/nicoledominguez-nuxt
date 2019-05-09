@@ -9,7 +9,8 @@
 
       <div>
         <a :href="link.url" v-for="link in links" class="btn">
-          <i :class="link.icon" aria-hidden="true"></i>
+          <font-awesome-icon :icon="link.icon"/>
+
           {{ link.name }}
         </a>
       </div>
@@ -58,10 +59,10 @@ export default {
   asyncData (context) {
     return {
       links: [
-        { name:'Resumé', url: '~/assets/public/ndominguez-resume-2019.pdf', icon: 'fa fa-file' },
-        { name:'Contact', url: 'mailto:work@nicoledominguez.com', icon: 'fa fa-envelope' },
-        { name:'Portfolio', url: '/portfolio', icon: 'fa fa-briefcase' },
-        { name:'About', url: '/about', icon: 'fa fa-user' }
+        { name:'Resumé', url: '~/assets/public/ndominguez-resume-2019.pdf', icon: 'file' },
+        { name:'Contact', url: 'mailto:work@nicoledominguez.com', icon: 'envelope' },
+        { name:'Portfolio', url: '/portfolio', icon: 'briefcase' },
+        { name:'About', url: '/about', icon: 'user' }
       ]
     }
   }

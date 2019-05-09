@@ -40,11 +40,9 @@ export default {
   plugins: [
   ],
 
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
-        'nuxt-webfontloader',
+    'nuxt-webfontloader',
+    'nuxt-fontawesome'
   ],
 
   /*
@@ -62,5 +60,14 @@ export default {
    typekit: {
      id: 'amr1fda'
    }
- },
+  },
+  fontawesome: {
+    imports: [
+      {
+        component: 'fa',
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      }
+    ]
+  }
 }
