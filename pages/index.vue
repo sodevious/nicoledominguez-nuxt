@@ -28,7 +28,7 @@
   </header>
 </template>
 
-<style>
+<style lang="scss">
   .nd-header-info {
     padding: 3rem 1rem;
     text-align: center;

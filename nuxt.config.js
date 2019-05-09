@@ -42,7 +42,8 @@ export default {
 
   modules: [
     'nuxt-webfontloader',
-    'nuxt-fontawesome'
+    'nuxt-fontawesome',
+    '@nuxtjs/style-resources'
   ],
 
   build: {
@@ -73,5 +74,9 @@ export default {
         icons: ['fas']
       }
     ]
+  },
+
+  styleResources: {
+    scss: ['./assets/scss/_variables.scss']
   }
 }
