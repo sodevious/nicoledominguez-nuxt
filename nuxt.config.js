@@ -45,15 +45,18 @@ export default {
     'nuxt-fontawesome'
   ],
 
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-    }
+    postcss: {
+     plugins: {
+       'stylelint': false, // turning this off because it's not ignoring node_modules like it's supposed to
+       'autoprefixer': {},
+     },
+     preset: {
+       autoprefixer: {
+         grid: true
+       }
+     }
+   }
   },
 
   webfontloader: {
@@ -61,6 +64,7 @@ export default {
      id: 'amr1fda'
    }
   },
+
   fontawesome: {
     imports: [
       {
