@@ -9,7 +9,7 @@
 
       <div>
         <a :href="link.url" v-for="link in links" class="btn">
-          <font-awesome-icon :icon="link.icon"/>
+          <font-awesome-icon :icon="link.icon"/>&nbsp;&nbsp;
 
           {{ link.name }}
         </a>

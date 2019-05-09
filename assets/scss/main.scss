@@ -61,7 +61,7 @@ $wide-desktop:    1280px;
 $site-gutter:     20px;
 
 $xs-font-size:    10px;
-$sm-font-size:    12px;
+$sm-font-size:    0.875rem;
 $md-font-size:    14px;
 $lg-font-size:    18px;
 $xl-font-size:    22px;
@@ -77,6 +77,7 @@ $xxl-font-size:   28px;
 body {
   background-color: $color-vanilla;
   font-family: $sans-font;
+  font-size: $md-font-size;
   font-weight: 400;
   line-height: 1.25em;
   color: $color-slate;
@@ -119,19 +120,31 @@ a {
 // Global
 // --------------------------
 .btn {
+  appearance: none;
   display: inline-block;
   padding: 8px 10px;
+  border: none;
+  background-color: transparent;
   font-size: $sm-font-size;
   font-weight: $nd-adelle-bold;
+  line-height: 1.25;
   text-align: center;
   text-transform: uppercase;
   color: $color-purple;
+  cursor: pointer;
+
+  .svg-inline--fa {
+    position: relative;
+    top: -1px;
+    font-size: 80%;
+    color: $color-purple-light;
+  }
 
   &:hover {
     background-color: $color-pink;
     color: white;
 
-    .fa {
+    .svg-inline--fa {
       color: $color-offWhite;
     }
   }
