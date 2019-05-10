@@ -1,5 +1,5 @@
 <template>
-  <header role="banner" class="nd-header nd-row">
+  <header role="banner" class="nd-header">
     <div class="nd-header-info nd-col-6">
       <logo />
 
@@ -8,11 +8,10 @@
       </h2>
 
       <div>
-        <a :href="link.url" v-for="link in links" class="btn">
-          <font-awesome-icon :icon="link.icon"/>&nbsp;&nbsp;
-
-          {{ link.name }}
-        </a>
+        <Button icon="file" url="~/assets/public/ndominguez-resume-2019.pdf">Resumé</Button>
+        <Button icon="envelope" url="mailto:work@nicoledominguez.com">Contact</Button>
+        <Button icon="briefcase" url="/portfolio">Portfolio</Button>
+        <Button icon="user" url="/about">About</Button>
       </div>
 
       <p class="nd-header-intro">
@@ -29,6 +28,12 @@
 </template>
 
 <style lang="scss">
+  .nd-header {
+    @include flex-container();
+    width: 100%;
+    background-color: $color-vanilla;
+  }
+
   .nd-header-info {
     padding: 3rem 1rem;
     text-align: center;
@@ -46,25 +51,50 @@
     font-size: $xl-font-size;
     font-weight: $nd-adelle-light;
   }
+
+  .nd-header-intro {
+    margin: 2rem auto 0 auto;
+    width: 90%;
+    font-family: $nd-freight;
+    font-size: $lg-font-size;
+    line-height: 1.2em;
+    color: $color-purple-dark;
+  }
+
+  @media screen and (min-width: $tablet) {
+    .nd-header-info {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nd-header-cta {
+      margin: 0 0.5rem;
+      font-size: $md-font-size - 2;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    .nd-header-intro {
+      font-size: $xl-font-size;
+    }
+
+    .nd-header-cta {
+      margin: 0 0.75rem;
+      font-size: $md-font-size;
+    }
+  }
 </style>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import Button from '~/components/Button.vue'
 
 export default {
   components: {
-    Logo
-  },
-
-  asyncData (context) {
-    return {
-      links: [
-        { name:'Resumé', url: '~/assets/public/ndominguez-resume-2019.pdf', icon: 'file' },
-        { name:'Contact', url: 'mailto:work@nicoledominguez.com', icon: 'envelope' },
-        { name:'Portfolio', url: '/portfolio', icon: 'briefcase' },
-        { name:'About', url: '/about', icon: 'user' }
-      ]
-    }
+    Logo,
+    Button
   }
  }
 </script>

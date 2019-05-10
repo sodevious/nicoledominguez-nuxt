@@ -1,4 +1,5 @@
 @import 'normalize.css';
+@import '_mixins.scss';
 @import '_variables.scss';
 
 //
@@ -29,16 +30,7 @@ a {
 //
 // Layout & Grid
 // --------------------------
-.nd-row {
-  display: block;
-}
-
 @media screen and (min-width: $tablet) {
-  .nd-row {
-    display: flex;
-    justify-content: space-between;
-  }
-
   .nd-col-4 {
     float: none;
     flex: 0 0 31%;

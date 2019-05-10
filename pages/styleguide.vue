@@ -4,20 +4,19 @@
 
     <h2>Global styles</h2>
 
-    <a href="#" class="btn">Button Link</a>
-    <a href="#" class="btn">Button Link with icon &nbsp;<font-awesome-icon icon="user"/></a>
-
-    <button class="btn"><font-awesome-icon icon="star"/>&nbsp; Button Element with icon</button>
-    <button class="btn">Button Element</button>
+    <Button icon="star">About</Button>
+    <Button icon="user" url="/about">About</Button>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import Button from '~/components/Button'
 
 export default {
   components: {
-    Logo
+    Logo,
+    Button
   }
 }
 </script>

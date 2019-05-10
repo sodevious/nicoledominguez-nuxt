@@ -1,0 +1,11 @@
+//
+// Layout & Grid
+// --------------------------
+@mixin flex-container {
+  display: block;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
